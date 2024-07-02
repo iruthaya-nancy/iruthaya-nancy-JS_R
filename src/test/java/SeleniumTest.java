@@ -16,17 +16,18 @@ public class SeleniumTest {
 
     private WebDriver driver;
 
-    @Before
+     @Before
     public void setUp() {
-        // Set up ChromeDriver path
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
+        // Set up EdgeDriver path
+        System.setProperty("webdriver.edge.driver", "driver/msedgedriver");
 
-        // Create a new ChromeDriver instance
-        ChromeOptions options = new ChromeOptions();
+        // Create a new EdgeDriver instance
+        EdgeOptions options = new EdgeOptions();
         options.addArguments("headless");
-        driver = new ChromeDriver(options);
+        driver = new EdgeDriver(options);
+
         File file = new File("EventListener.html");
-        
+
         // Open the HTML file
         driver.get("file://" + file.getAbsolutePath());
     }
