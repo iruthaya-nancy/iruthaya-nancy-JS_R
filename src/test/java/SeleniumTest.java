@@ -77,12 +77,6 @@ public class SeleniumTest {
 
     @After
     public void tearDown() {
-        // Close the browser window (optional)
-        driver.close();
-
-        // Quit the WebDriver instance
-        if (driver != null) {
             driver.quit();
-        }
     }
 }
