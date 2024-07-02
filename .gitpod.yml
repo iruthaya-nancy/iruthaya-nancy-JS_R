@@ -1,0 +1,10 @@
+tasks:
+  - init: sudo apt update && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && wget https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_STABLE
+  - command: sleep 15;sudo apt update && sudo apt install -y ./google-chrome-stable_current_amd64.deb && wget https://storage.googleapis.com/chrome-for-testing-public/123.0.6278.0/linux64/chromedriver-linux64.zip && unzip chromedriver-linux64.zip  && mkdir driver && mv chromedriver-linux64/chromedriver driver/ && rm chromedriver-linux64.zip && rm -r chromedriver-linux64
+  - command: for i in {1..6}; do chmod 600 ~/.ssh/id_rsa && chmod 644 ~/.ssh/id_rsa.pub && ssh-keyscan github.com >> ~/.ssh/known_hosts; sleep 20; done
+  - command: git remote set-url origin git@github.com:iruthaya-nancy/iruthaya-nancy-JS_R.git && sed "s/\r$//" commit-command.sh | bash
+vscode:
+ extensions:
+   - streetsidesoftware.code-spell-checker
+   - artisanbytecrafter.poptheme
+   - aaron-bond.better-comments
