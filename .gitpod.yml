@@ -1,6 +1,6 @@
 tasks:
   - init: sudo apt update && wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_126.0.2592.81-1_amd64.deb
-  - command: sleep 15; sudo apt update && sudo apt install -y ./microsoft-edge-stable_114.0.1823.58-1_amd64.deb  && wget https://msedgedriver.azureedge.net/126.0.2592.81/edgedriver_linux64.zip && unzip edgedriver_linux64.zip && mkdir driver && mv msedgedriver driver/ && rm edgedriver_linux64.zip
+  - command: sleep 15; sudo apt update && sudo apt install -y ./microsoft-edge-stable_126.0.2592.81-1_amd64.deb  && wget https://msedgedriver.azureedge.net/126.0.2592.81/edgedriver_linux64.zip && unzip edgedriver_linux64.zip && mkdir driver && mv msedgedriver driver/ && rm edgedriver_linux64.zip
   - command: for i in {1..6}; do chmod 600 ~/.ssh/id_rsa && chmod 644 ~/.ssh/id_rsa.pub && ssh-keyscan github.com >> ~/.ssh/known_hosts; sleep 20; done
   - command: git remote set-url origin git@github.com:iruthaya-nancy/iruthaya-nancy-JS_R.git && sed "s/\r$//" commit-command.sh | bash
 vscode:
